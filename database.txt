@@ -1,0 +1,629 @@
+-- phpMyAdmin SQL Dump
+-- version 2.11.9.4
+-- http://www.phpmyadmin.net
+--
+-- Host: oniddb
+-- Generation Time: Nov 14, 2016 at 05:22 PM
+-- Server version: 5.5.52
+-- PHP Version: 5.2.6-1+lenny16
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `nichocam-db`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ABPlot`
+--
+
+CREATE TABLE IF NOT EXISTS `ABPlot` (
+  `Plot_Title` varchar(25) NOT NULL,
+  `Episode_Title` varchar(50) NOT NULL,
+  `Level` varchar(1) NOT NULL,
+  PRIMARY KEY (`Plot_Title`,`Episode_Title`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ABPlot`
+--
+
+INSERT INTO `ABPlot` (`Plot_Title`, `Episode_Title`, `Level`) VALUES
+('DS9S01E01A', 'Emissary Part 1', 'A'),
+('DS9S01E01B', 'Emissary Part 1', 'B'),
+('DS9S01E02A', 'Emissary Part 2', 'A'),
+('DS9S01E02B', 'Emissary Part 2', 'B'),
+('DS9S01E03A', 'Past Prologue', 'A'),
+('DS9S01E03B', 'Past Prologue', 'B'),
+('DS9S01E04A', 'A Man Alone', 'A'),
+('DS9S01E04B', 'A Man Alone', 'B'),
+('DS9S01E05A', 'Babel', 'A'),
+('DS9S01E05B', 'Babel', 'B'),
+('DS9S01E06A', 'Captive Pursuit', 'A'),
+('DS9S01E06B', 'Captive Pursuit', 'B'),
+('DS9S01E07A', 'Q-Less', 'A'),
+('DS9S01E07B', 'Q-Less', 'B'),
+('DS9S01E08A', 'Dax', 'A'),
+('DS9S01E08B', 'Dax', 'B'),
+('DS9S01E09A', 'The Passenger', 'A'),
+('DS9S01E09B', 'The Passenger', 'B'),
+('DS9S01E10A', 'Move Along Home', 'A'),
+('DS9S01E10B', 'Move Along Home', 'B'),
+('DS9S01E11A', 'The Nagus', 'A'),
+('DS9S01E11B', 'The Nagus', 'B'),
+('DS9S01E12A', 'Vortex', 'A'),
+('DS9S01E12B', 'Vortex', 'B'),
+('DS9S01E13A', 'Battle Lines', 'A'),
+('DS9S01E13B', 'Battle Lines', 'B'),
+('DS9S01E14A', 'The Storyteller', 'A'),
+('DS9S01E14B', 'The Storyteller', 'B'),
+('DS9S01E15A', 'Progress', 'A'),
+('DS9S01E15B', 'Progress', 'B'),
+('DS9S01E16A', 'If Wishes Were Horses', 'A'),
+('DS9S01E16B', 'If Wishes Were Horses', 'B'),
+('DS9S01E17A', 'The Forsaken', 'A'),
+('DS9S01E17B', 'The Forsaken', 'B'),
+('DS9S01E18A', 'Dramatis Personae', 'A'),
+('DS9S01E18B', 'Dramatis Personae', 'B'),
+('DS9S01E19A', 'Duet', 'A'),
+('DS9S01E19B', 'Duet', 'B'),
+('DS9S01E20A', 'In the Hands of the Prophets', 'A'),
+('DS9S01E20B', 'In the Hands of the Prophets', 'B');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `CT`
+--
+
+CREATE TABLE IF NOT EXISTS `CT` (
+  `Character_name` varchar(25) NOT NULL,
+  `Main_version` varchar(25) NOT NULL,
+  `Actor` varchar(25) NOT NULL,
+  `Role` varchar(25) NOT NULL,
+  `Archetype` varchar(25) NOT NULL,
+  PRIMARY KEY (`Character_name`,`Role`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `CT`
+--
+
+INSERT INTO `CT` (`Character_name`, `Main_version`, `Actor`, `Role`, `Archetype`) VALUES
+('Bareil Antos', 'None', 'Philip Anglim', 'Vedek', 'Love Interest'),
+('Benjamin Sisko', 'None', 'Avery Brooks', 'Commander', 'Diplomat'),
+('Dukat', 'None', 'Marc Alaimo', 'Enemy Commander', 'Foil'),
+('Elim Garak', 'None', 'Andrew Robinson', 'Spy', 'Moral Gray'),
+('George Primmin', 'None', 'James Lashly', 'Security Officer', 'Beat Cop'),
+('Jadzia Dax', 'None', 'Terry Farrell', 'Chief Science Officer', 'Sex Symbol'),
+('Jake Sisko', 'None', 'Cirroc Lofton', 'None', 'Family'),
+('Jake Sisko Prophet', 'Jake Sisko', 'Cirroc Lofton', 'Prophet', 'Wormhole Alien'),
+('Jean Luc Picard', 'None', 'Patrick Stewart', 'Captain', 'Diplomat'),
+('Jean Luc Picard Prophet', 'Jean Luc Picard', 'Patrick Stewart', 'Prophet', 'Wormhole Alien'),
+('Jennifer Sisko', 'None', 'Felecia M. Bell', 'None', 'Ghost'),
+('Jennifer Sisko Prophet', 'Jennifer Sisko', 'Felecia M. Bell', 'Prophet', 'Wormhole Alien'),
+('Jones', 'None', 'Randy Pflug', 'Security Officer', 'Background Character'),
+('Julian Bashir', 'None', 'Alexander Siddig', 'Chief Medical Officer', 'Ladies Man'),
+('Kai Opaka Prophet', 'Opaka', 'Camille Saviola', 'Prophet', 'Wormhole Alien'),
+('Keiko O''Brien', 'None', 'Rosalind Chao', 'Teacher', 'None'),
+('Kira Nerys', 'None', 'Nana Visitor', 'Executive Officer', 'Fighter'),
+('Locutus', 'None', 'Patrick Stewart', 'Borg King', 'Borg'),
+('Locutus Prophet', 'Locutus', 'Patrick Stewart', 'Prophet', 'Wormhole Alien'),
+('Lwaxana Troi', 'None', 'Majel Barrett-Roddenberry', 'Ambassador', 'Comic Relief'),
+('Miles O''Brien', 'None', 'Colm Meaney', 'Chief of Operations', 'Fix-it'),
+('Molly O''Brien', 'None', 'Hana Hatae', 'None', 'Family'),
+('Neela', 'None', 'Robin Christopher', 'Engineer', 'Religious Zealot'),
+('Nog', 'None', 'Aron Eisenberg', 'Waiter', 'Alien'),
+('Odo', 'None', 'Rene Auberjonois', 'Chief of Security', 'Outsider'),
+('Opaka', 'None', 'Camille Saviola', 'Spiritual Leader', 'Supernatural Aide'),
+('Q', 'None', 'John de Lancie', 'God', 'Trickster'),
+('Quark', 'None', 'Armin Shimerman', 'Bartender/Cook', 'Alien'),
+('Rom', 'None', 'Max Grodenchik', 'Waiter', 'Fool'),
+('Vash', 'None', 'Jennifer Hetrick', 'Treasure Hunter', 'Love Interest'),
+('Winn Adami', 'None', 'Louise Fletcher', 'Vedek', 'Foil'),
+('Zek', 'None', 'Wallace Shawn', 'Grand Nagus', 'Old Man');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Episode`
+--
+
+CREATE TABLE IF NOT EXISTS `Episode` (
+  `Episode_Title` varchar(50) NOT NULL,
+  `Season_and_Episode` varchar(9) NOT NULL,
+  `Length` time NOT NULL,
+  `Command` varchar(15) NOT NULL,
+  `Airdate` date NOT NULL,
+  `Stardate` float NOT NULL,
+  `Continuity` varchar(6) NOT NULL,
+  `Roddenberry` varchar(3) NOT NULL,
+  PRIMARY KEY (`Episode_Title`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Episode`
+--
+
+INSERT INTO `Episode` (`Episode_Title`, `Season_and_Episode`, `Length`, `Command`, `Airdate`, `Stardate`, `Continuity`, `Roddenberry`) VALUES
+('A Man Alone', 'DS9S01E04', '00:45:35', 'Deep Space 9', '1993-01-17', 46423.7, 'Main', 'No'),
+('Babel', 'DS9S01E05', '00:45:41', 'Deep Space 9', '1993-01-24', 46423.7, 'Main', 'No'),
+('Battle Lines', 'DS9S01E13', '00:45:40', 'Deep Space 9', '1993-04-25', 46715.2, 'Main', 'No'),
+('Captive Pursuit', 'DS9S01E06', '00:45:39', 'Deep Space 9', '1993-01-30', 46477.5, 'Main', 'No'),
+('Dax', 'DS9S01E08', '00:45:34', 'Deep Space 9', '1993-02-13', 46910.1, 'Main', 'No'),
+('Dramatis Personae', 'DS9S01E18', '00:45:40', 'Deep Space 9', '1993-05-30', 46922.3, 'Main', 'No'),
+('Duet', 'DS9S01E19', '00:45:41', 'Deep Space 9', '1993-06-13', 46933.4, 'Main', 'No'),
+('Emissary Part 1', 'DS9S01E01', '00:45:18', 'Deep Space 9', '1993-01-03', 46379.1, 'Main', 'No'),
+('Emissary Part 2', 'DS9S01E02', '00:45:18', 'Deep Space 9', '1993-01-03', 46380.1, 'Main', 'No'),
+('If Wishes Were Horses', 'DS9S01E16', '00:45:41', 'Deep Space 9', '1993-05-16', 46853.2, 'Main', 'No'),
+('In the Hands of the Prophets', 'DS9S01E20', '00:45:41', 'Deep Space 9', '1993-06-20', 46951.7, 'Main', 'No'),
+('Move Along Home', 'DS9S01E10', '00:45:36', 'Deep Space 9', '1993-03-14', 46612.4, 'Main', 'No'),
+('Past Prologue', 'DS9S01E03', '00:45:36', 'Deep Space 9', '1993-01-09', 46411.5, 'Main', 'No'),
+('Progress', 'DS9S01E15', '00:45:39', 'Deep Space 9', '1993-05-09', 46844.3, 'Main', 'No'),
+('Q-Less', 'DS9S01E07', '00:45:41', 'Deep Space 9', '1993-02-06', 46531.2, 'Main', 'No'),
+('The Forsaken', 'DS9S01E17', '00:45:38', 'Deep Space 9', '1993-05-23', 46925.1, 'Main', 'No'),
+('The Nagus', 'DS9S01E11', '00:45:36', 'Deep Space 9', '1993-03-21', 46657, 'Main', 'No'),
+('The Passenger', 'DS9S01E09', '00:45:45', 'Deep Space 9', '1993-02-20', 46570.8, 'Main', 'No'),
+('The Storyteller', 'DS9S01E14', '00:45:40', 'Deep Space 9', '1993-05-02', 46729.1, 'Main', 'No'),
+('Vortex', 'DS9S01E12', '00:45:38', 'Deep Space 9', '1993-04-18', 46689.6, 'Main', 'No');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Login`
+--
+
+CREATE TABLE IF NOT EXISTS `Login` (
+  `User_ID` int(5) NOT NULL AUTO_INCREMENT,
+  `User_Name` varchar(15) NOT NULL,
+  `Password` varchar(15) NOT NULL,
+  PRIMARY KEY (`User_ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=37 ;
+
+--
+-- Dumping data for table `Login`
+--
+
+INSERT INTO `Login` (`User_ID`, `User_Name`, `Password`) VALUES
+(31, 'test', 'a94a8fe5ccb19ba'),
+(32, 'test2', 'a94a8fe5ccb19ba'),
+(33, 'teest', '86f7e437faa5a7f'),
+(34, 'ttest', '8efd86fb78a56a5'),
+(35, 'aa', '388ad1c312a488e'),
+(36, 'Testt', '1f444844b1ca616');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Plot`
+--
+
+CREATE TABLE IF NOT EXISTS `Plot` (
+  `Plot_Title` varchar(25) NOT NULL,
+  `Description` varchar(255) NOT NULL,
+  PRIMARY KEY (`Plot_Title`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Plot`
+--
+
+INSERT INTO `Plot` (`Plot_Title`, `Description`) VALUES
+('DS9S01E01A', 'An introduction to the main focus of the series: The space station, and the Bajoran Wormhole.'),
+('DS9S01E01B', 'There are several side plots focused on introducing the main characters'),
+('DS9S01E02A', 'Traveling into the wormhole Sisko meets the prophets of the Bajoran people, and becomes their Emissary.'),
+('DS9S01E02B', 'Kira faces off against several Cardassian war ships defending the station.'),
+('DS9S01E03A', 'A Bajoran terrorist shows up at the station with Cardassians hot on his tail. Kira tries to convince him that the war is over.'),
+('DS9S01E03B', 'Garak sees the attractive new doctor and goes up to flirt with him. A friendship is born.'),
+('DS9S01E04A', 'A Bajoran double agent returns to DS9. When he turns up dead the people turn on Odo.'),
+('DS9S01E04B', 'Keiko feels unfulfilled and decides to start a school. Several relationships are explored.'),
+('DS9S01E05A', 'A disease sweeps through the station causing aphasia.'),
+('DS9S01E05B', 'The relationship between Quark and Odo fleshes out.'),
+('DS9S01E06A', 'The station recieves their first visitor from the Gamma Quadrant, and he seems very nervous.'),
+('DS9S01E06B', 'There was no room for a B plot.'),
+('DS9S01E07A', 'Q shows up. What more do you need to know'),
+('DS9S01E07B', 'No room for a B plot'),
+('DS9S01E08A', 'Jadzia faces charges aimed at Curzon.'),
+('DS9S01E08B', 'Dax''s relationships with the crew are fleshed out.'),
+('DS9S01E09A', 'A criminal who makes a habit of cheating death has died, and is now loose on the station.'),
+('DS9S01E09B', 'Quark and Odo''s cat and mouse continues. George Primmin objects.'),
+('DS9S01E10A', 'First contact with the Wadi places the senior officers in a giant game.'),
+('DS9S01E10B', 'No room for a B plot'),
+('DS9S01E11A', 'The Nagus arrives on the station with important news for Quark.'),
+('DS9S01E11B', 'Jake and Nog have their friendship put under strain by school, and parents.'),
+('DS9S01E12A', 'Odo meets a criminal who may know about his past, and his integrity is put to the test.'),
+('DS9S01E12B', 'No room for a B plot'),
+('DS9S01E13A', 'Kai Opaka shows up on the station speaking of prophecy, and Sisko gives her a tour that includes the gamma quadrant. The shuttle crashes on a warring prison planet.'),
+('DS9S01E13B', 'No room for a B plot'),
+('DS9S01E14A', 'The Chief and Bashir are called for a medical emergency, and Miles ends up a god for a group of people fending off an energy being.'),
+('DS9S01E14B', 'Jake and Nog teach a Bajoran leader in the midst of negotiations what it means to be a kid.'),
+('DS9S01E15A', 'The Bajoran government has requisitioned land for the greater good. One obstinate farmer refuses to leave his home of 40 years and Kira must convince him.'),
+('DS9S01E15B', 'Jake and Nog trade their way up from some condiments to become land barons'),
+('DS9S01E16A', 'The imaginations of the station starts coming to life, does it have something to do with the rip in space threatening to engulf the station?'),
+('DS9S01E16B', 'No room for a B plot.'),
+('DS9S01E17A', 'Several Ambassadors show up for a tour of the station, including Lwaxana Troi. She and Odo get trapped in the turbolift.'),
+('DS9S01E17B', 'No room for a B plot.'),
+('DS9S01E18A', 'The crew begins behaving oddly, taking on personality traits not their own. A power struggle ensues'),
+('DS9S01E18B', 'No room for a B plot.'),
+('DS9S01E19A', 'When a Cardassian shows up with a rare disease he could only have got at a forced labor camp Kira goes on the warpath.'),
+('DS9S01E19B', 'No room for a B plot.'),
+('DS9S01E20A', 'Vedek Winn shows up to piss everybody off. She wages a religious war against the station and the school.'),
+('DS9S01E20B', 'No room for a B plot.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Plot_Participant`
+--
+
+CREATE TABLE IF NOT EXISTS `Plot_Participant` (
+  `Character_name` varchar(25) NOT NULL,
+  `Episode_Title` varchar(50) NOT NULL,
+  `Plot_Title` varchar(25) NOT NULL,
+  PRIMARY KEY (`Character_name`,`Episode_Title`,`Plot_Title`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Plot_Participant`
+--
+
+INSERT INTO `Plot_Participant` (`Character_name`, `Episode_Title`, `Plot_Title`) VALUES
+('Bareil Antos', 'In the Hands of the Prophets', 'DS9S01E20A'),
+('Benjamin Sisko', 'A Man Alone', 'DS9S01E04A'),
+('Benjamin Sisko', 'A Man Alone', 'DS9S01E04B'),
+('Benjamin Sisko', 'Babel', 'DS9S01E05A'),
+('Benjamin Sisko', 'Battle Lines', 'DS9S01E13A'),
+('Benjamin Sisko', 'Captive Pursuit', 'DS9S01E06A'),
+('Benjamin Sisko', 'Dax', 'DS9S01E08A'),
+('Benjamin Sisko', 'Dax', 'DS9S01E08B'),
+('Benjamin Sisko', 'Dramatis Personae', 'DS9S01E18A'),
+('Benjamin Sisko', 'Duet', 'DS9S01E19A'),
+('Benjamin Sisko', 'Duet', 'DS9S01E20A'),
+('Benjamin Sisko', 'Emissary Part 1', 'DS9S01E01A'),
+('Benjamin Sisko', 'Emissary Part 2', 'DS9S01E02A'),
+('Benjamin Sisko', 'If Wishes Were Horses', 'DS9S01E16A'),
+('Benjamin Sisko', 'Move Along Home', 'DS9S01E10A'),
+('Benjamin Sisko', 'Past Prologue', 'DS9S01E03A'),
+('Benjamin Sisko', 'Progress', 'DS9S01E15A'),
+('Benjamin Sisko', 'Q-Less', 'DS9S01E07A'),
+('Benjamin Sisko', 'The Forsaken', 'DS9S01E17A'),
+('Benjamin Sisko', 'The Passenger', 'DS9S01E09A'),
+('Benjamin Sisko', 'The Storyteller', 'DS9S01E14B'),
+('Benjamin Sisko', 'Vortex', 'DS9S01E12A'),
+('Dukat', 'Duet', 'DS9S01E19A'),
+('Dukat', 'Emissary Part 1', 'DS9S01E01A'),
+('Dukat', 'Emissary Part 2', 'DS9S01E02A'),
+('Elim Garak', 'Past Prologue', 'DS9S01E03A'),
+('Elim Garak', 'Past Prologue', 'DS9S01E03B'),
+('George Primmin', 'Move Along Home', 'DS9S01E10A'),
+('George Primmin', 'The Passenger', 'DS9S01E09A'),
+('George Primmin', 'The Passenger', 'DS9S01E09B'),
+('Jadzia Dax', 'A Man Alone', 'DS9S01E04A'),
+('Jadzia Dax', 'A Man Alone', 'DS9S01E04B'),
+('Jadzia Dax', 'Babel', 'DS9S01E05A'),
+('Jadzia Dax', 'Battle Lines', 'DS9S01E13A'),
+('Jadzia Dax', 'Dax', 'DS9S01E08A'),
+('Jadzia Dax', 'Dax', 'DS9S01E08B'),
+('Jadzia Dax', 'Dramatis Personae', 'DS9S01E18A'),
+('Jadzia Dax', 'Duet', 'DS9S01E19A'),
+('Jadzia Dax', 'Emissary Part 1', 'DS9S01E01A'),
+('Jadzia Dax', 'Emissary Part 2', 'DS9S01E02A'),
+('Jadzia Dax', 'If Wishes Were Horses', 'DS9S01E16A'),
+('Jadzia Dax', 'In the Hands of the Prophets', 'DS9S01E20A'),
+('Jadzia Dax', 'Move Along Home', 'DS9S01E10A'),
+('Jadzia Dax', 'Past Prologue', 'DS9S01E03A'),
+('Jadzia Dax', 'Q-Less', 'DS9S01E07A'),
+('Jadzia Dax', 'The Forsaken', 'DS9S01E17A'),
+('Jadzia Dax', 'The Passenger', 'DS9S01E09A'),
+('Jadzia Dax', 'Vortex', 'DS9S01E12A'),
+('Jake Sisko', 'A Man Alone', 'DS9S01E04B'),
+('Jake Sisko', 'Babel', 'DS9S01E05A'),
+('Jake Sisko', 'Emissary Part 1', 'DS9S01E01A'),
+('Jake Sisko', 'Emissary Part 2', 'DS9S01E02A'),
+('Jake Sisko', 'If Wishes Were Horses', 'DS9S01E16A'),
+('Jake Sisko', 'In the Hands of the Prophets', 'DS9S01E20A'),
+('Jake Sisko', 'Progress', 'DS9S01E15B'),
+('Jake Sisko', 'The Nagus', 'DS9S01E11A'),
+('Jake Sisko', 'The Storyteller', 'DS9S01E14B'),
+('Jake Sisko Prophet', 'Emissary Part 2', 'DS9S01E02A'),
+('Jean Luc Picard', 'Emissary Part 1', 'DS9S01E01A'),
+('Jean Luc Picard', 'Emissary Part 2', 'DS9S01E02A'),
+('Jean Luc Picard Prophet', 'Emissary Part 2', 'DS9S01E02A'),
+('Jennifer Sisko', 'Emissary Part 1', 'DS9S01E01A'),
+('Jennifer Sisko Prophet', 'Emissary Part 2', 'DS9S01E02A'),
+('Julian Bashir', 'A Man Alone', 'DS9S01E04A'),
+('Julian Bashir', 'A Man Alone', 'DS9S01E04B'),
+('Julian Bashir', 'Babel', 'DS9S01E05A'),
+('Julian Bashir', 'Battle Lines', 'DS9S01E13A'),
+('Julian Bashir', 'Dax', 'DS9S01E08A'),
+('Julian Bashir', 'Dax', 'DS9S01E08B'),
+('Julian Bashir', 'Dramatis Personae', 'DS9S01E18A'),
+('Julian Bashir', 'Emissary Part 1', 'DS9S01E01A'),
+('Julian Bashir', 'Emissary Part 2', 'DS9S01E02A'),
+('Julian Bashir', 'If Wishes Were Horses', 'DS9S01E16A'),
+('Julian Bashir', 'Move Along Home', 'DS9S01E10A'),
+('Julian Bashir', 'Past Prologue', 'DS9S01E03A'),
+('Julian Bashir', 'Past Prologue', 'DS9S01E03B'),
+('Julian Bashir', 'The Forsaken', 'DS9S01E17A'),
+('Julian Bashir', 'The Passenger', 'DS9S01E09A'),
+('Julian Bashir', 'The Storyteller', 'DS9S01E14A'),
+('Kai Opaka Prophet', 'Emissary Part 1', 'DS9S01E01A'),
+('Keiko O''Brien', 'A Man Alone', 'DS9S01E04B'),
+('Keiko O''Brien', 'If Wishes Were Horses', 'DS9S01E16A'),
+('Keiko O''Brien', 'In the Hands of the Prophets', 'DS9S01E20A'),
+('Kira Nerys', 'A Man Alone', 'DS9S01E04A'),
+('Kira Nerys', 'Babel', 'DS9S01E05A'),
+('Kira Nerys', 'Battle Lines', 'DS9S01E13A'),
+('Kira Nerys', 'Dax', 'DS9S01E08A'),
+('Kira Nerys', 'Dramatis Personae', 'DS9S01E18A'),
+('Kira Nerys', 'Duet', 'DS9S01E19A'),
+('Kira Nerys', 'Emissary Part 1', 'DS9S01E01A'),
+('Kira Nerys', 'Emissary Part 2', 'DS9S01E02A'),
+('Kira Nerys', 'If Wishes Were Horses', 'DS9S01E16A'),
+('Kira Nerys', 'In the Hands of the Prophets', 'DS9S01E20A'),
+('Kira Nerys', 'Move Along Home', 'DS9S01E10A'),
+('Kira Nerys', 'Past Prologue', 'DS9S01E03A'),
+('Kira Nerys', 'Progress', 'DS9S01E15A'),
+('Kira Nerys', 'Q-Less', 'DS9S01E07A'),
+('Kira Nerys', 'The Forsaken', 'DS9S01E17A'),
+('Kira Nerys', 'The Passenger', 'DS9S01E09A'),
+('Locutus', 'Emissary Part 1', 'DS9S01E01A'),
+('Locutus Prophet', 'Emissary Part 2', 'DS9S01E02A'),
+('Lwaxana Troi', 'The Forsaken', 'DS9S01E17A'),
+('Miles O''Brien', 'A Man Alone', 'DS9S01E04B'),
+('Miles O''Brien', 'Babel', 'DS9S01E05A'),
+('Miles O''Brien', 'Battle Lines', 'DS9S01E13A'),
+('Miles O''Brien', 'Captive Pursuit', 'DS9S01E06A'),
+('Miles O''Brien', 'Dramatis Personae', 'DS9S01E18A'),
+('Miles O''Brien', 'Emissary Part 1', 'DS9S01E01A'),
+('Miles O''Brien', 'Emissary Part 2', 'DS9S01E02A'),
+('Miles O''Brien', 'If Wishes Were Horses', 'DS9S01E16A'),
+('Miles O''Brien', 'In the Hands of the Prophets', 'DS9S01E20A'),
+('Miles O''Brien', 'Past Prologue', 'DS9S01E03A'),
+('Miles O''Brien', 'Q-Less', 'DS9S01E07A'),
+('Miles O''Brien', 'The Forsaken', 'DS9S01E17A'),
+('Miles O''Brien', 'The Nagus', 'DS9S01E11A'),
+('Miles O''Brien', 'The Storyteller', 'DS9S01E14A'),
+('Molly O''Brien', 'If Wishes Were Horses', 'DS9S01E16A'),
+('Nog', 'A Man Alone', 'DS9S01E04B'),
+('Nog', 'Emissary Part 1', 'DS9S01E01A'),
+('Nog', 'Progress', 'DS9S01E15B'),
+('Nog', 'The Nagus', 'DS9S01E11A'),
+('Nog', 'The Storyteller', 'DS9S01E14B'),
+('Odo', 'A Man Alone', 'DS9S01E04A'),
+('Odo', 'Babel', 'DS9S01E05B'),
+('Odo', 'Captive Pursuit', 'DS9S01E06A'),
+('Odo', 'Dax', 'DS9S01E08A'),
+('Odo', 'Dramatis Personae', 'DS9S01E18A'),
+('Odo', 'Duet', 'DS9S01E19A'),
+('Odo', 'Emissary Part 1', 'DS9S01E01A'),
+('Odo', 'Emissary Part 2', 'DS9S01E02A'),
+('Odo', 'If Wishes Were Horses', 'DS9S01E16A'),
+('Odo', 'In the Hands of the Prophets', 'DS9S01E20A'),
+('Odo', 'Move Along Home', 'DS9S01E10A'),
+('Odo', 'Past Prologue', 'DS9S01E03A'),
+('Odo', 'The Forsaken', 'DS9S01E17A'),
+('Odo', 'The Passenger', 'DS9S01E09A'),
+('Odo', 'The Passenger', 'DS9S01E09B'),
+('Odo', 'Vortex', 'DS9S01E12A'),
+('Opaka', 'Battle Lines', 'DS9S01E13A'),
+('Opaka', 'Emissary Part 1', 'DS9S01E01A'),
+('Q', 'Q-Less', 'DS9S01E07A'),
+('Quark', 'A Man Alone', 'DS9S01E04A'),
+('Quark', 'Babel', 'DS9S01E05B'),
+('Quark', 'Dramatis Personae', 'DS9S01E18A'),
+('Quark', 'Emissary Part 1', 'DS9S01E01A'),
+('Quark', 'Emissary Part 2', 'DS9S01E02A'),
+('Quark', 'If Wishes Were Horses', 'DS9S01E16A'),
+('Quark', 'In the Hands of the Prophets', 'DS9S01E20A'),
+('Quark', 'Move Along Home', 'DS9S01E10A'),
+('Quark', 'Past Prologue', 'DS9S01E03A'),
+('Quark', 'Progress', 'DS9S01E15B'),
+('Quark', 'Q-Less', 'DS9S01E07A'),
+('Quark', 'The Forsaken', 'DS9S01E17A'),
+('Quark', 'The Nagus', 'DS9S01E11A'),
+('Quark', 'The Passenger', 'DS9S01E09B'),
+('Quark', 'Vortex', 'DS9S01E12A'),
+('Rom', 'A Man Alone', 'DS9S01E04B'),
+('Rom', 'Emissary Part 1', 'DS9S01E01A'),
+('Rom', 'Progress', 'DS9S01E15B'),
+('Rom', 'The Nagus', 'DS9S01E11A'),
+('Rom', 'Vortex', 'DS9S01E12A'),
+('Winn Adami', 'In the Hands of the Prophets', 'DS9S01E20A'),
+('Zek', 'The Nagus', 'DS9S01E11A');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Plot_Type`
+--
+
+CREATE TABLE IF NOT EXISTS `Plot_Type` (
+  `Plot_Title` varchar(25) NOT NULL,
+  `type` varchar(25) NOT NULL,
+  PRIMARY KEY (`Plot_Title`,`type`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Plot_Type`
+--
+
+INSERT INTO `Plot_Type` (`Plot_Title`, `type`) VALUES
+('DS9S01E01A', 'Cardassians'),
+('DS9S01E01A', 'The Bajoran Wormhole'),
+('DS9S01E01A', 'The Emissary'),
+('DS9S01E01A', 'The Prophets'),
+('DS9S01E01B', 'Bajorans'),
+('DS9S01E01B', 'Bashir & Dax'),
+('DS9S01E01B', 'Buddy'),
+('DS9S01E01B', 'Cardassians'),
+('DS9S01E01B', 'Introduction'),
+('DS9S01E01B', 'Religion'),
+('DS9S01E01B', 'Sisko & Dax'),
+('DS9S01E01B', 'Space Battle'),
+('DS9S01E01B', 'The Federation'),
+('DS9S01E01B', 'The Occupation'),
+('DS9S01E01B', 'The Ship Itself'),
+('DS9S01E02A', 'Energy Beings'),
+('DS9S01E02A', 'First Contact'),
+('DS9S01E02A', 'The Emissary'),
+('DS9S01E02A', 'The Occupation'),
+('DS9S01E02A', 'The Prophets'),
+('DS9S01E02A', 'Wormholes'),
+('DS9S01E02B', 'Bajorans'),
+('DS9S01E02B', 'Cardassians'),
+('DS9S01E02B', 'Religion'),
+('DS9S01E02B', 'Space Battle'),
+('DS9S01E02B', 'The Federation'),
+('DS9S01E02B', 'The Gamma Quadrant'),
+('DS9S01E02B', 'The Occupation'),
+('DS9S01E02B', 'The Ship Itself'),
+('DS9S01E03A', 'Bajorans'),
+('DS9S01E03A', 'Bashir & Garak'),
+('DS9S01E03A', 'Cardassians'),
+('DS9S01E03A', 'Investigation'),
+('DS9S01E03A', 'Klingons'),
+('DS9S01E03A', 'Space Battle'),
+('DS9S01E03A', 'Terrorism'),
+('DS9S01E03A', 'The Federation'),
+('DS9S01E03A', 'The Occupation'),
+('DS9S01E03B', 'Buddy'),
+('DS9S01E03B', 'Introduction'),
+('DS9S01E04A', 'Bajorans'),
+('DS9S01E04A', 'Cat and Mouse'),
+('DS9S01E04A', 'Changelings'),
+('DS9S01E04A', 'Cloning'),
+('DS9S01E04A', 'Investigation'),
+('DS9S01E04A', 'The Occupation'),
+('DS9S01E04B', 'Bashir & Dax'),
+('DS9S01E04B', 'Buddy'),
+('DS9S01E04B', 'DS9 School'),
+('DS9S01E04B', 'Ferengi'),
+('DS9S01E04B', 'Introduction'),
+('DS9S01E04B', 'Jake & Nog'),
+('DS9S01E04B', 'Quark & Odo'),
+('DS9S01E04B', 'Sisko & Dax'),
+('DS9S01E05A', 'Alien Virus'),
+('DS9S01E05A', 'Bajorans'),
+('DS9S01E05A', 'Terrorism'),
+('DS9S01E05A', 'The Occupation'),
+('DS9S01E05A', 'The Ship Itself'),
+('DS9S01E05B', 'Quark & Odo'),
+('DS9S01E06A', 'First Contact'),
+('DS9S01E06A', 'The Gamma Quadrant'),
+('DS9S01E06A', 'The Most Dangerous Game'),
+('DS9S01E07A', 'Bashir & O''Brien'),
+('DS9S01E07A', 'Energy Being'),
+('DS9S01E07A', 'Romance'),
+('DS9S01E08A', 'Investigation'),
+('DS9S01E08A', 'Sisko & Dax'),
+('DS9S01E08B', 'Bashir & Dax'),
+('DS9S01E09A', 'Investigation'),
+('DS9S01E09A', 'Mind Control'),
+('DS9S01E09A', 'Quark & Odo'),
+('DS9S01E09B', 'Cat and Mouse'),
+('DS9S01E09B', 'Quark & Odo'),
+('DS9S01E10A', 'First Contact'),
+('DS9S01E10A', 'It''s Only a Game'),
+('DS9S01E10A', 'The Gamma Quadrant'),
+('DS9S01E11A', 'Ferengi'),
+('DS9S01E11B', 'DS9 School'),
+('DS9S01E11B', 'Jake & Nog'),
+('DS9S01E12A', 'Cat and Mouse'),
+('DS9S01E12A', 'Changelings'),
+('DS9S01E12A', 'Quark & Odo'),
+('DS9S01E12A', 'The Gamma Quadrant'),
+('DS9S01E13A', 'Bajorans'),
+('DS9S01E13A', 'Lost Away Team'),
+('DS9S01E13A', 'Religion'),
+('DS9S01E13A', 'The Gamma Quadrant'),
+('DS9S01E13A', 'War'),
+('DS9S01E14A', 'Bajorans'),
+('DS9S01E14A', 'Bashir & O''Brien'),
+('DS9S01E14A', 'Energy Beings'),
+('DS9S01E14A', 'God to the Locals'),
+('DS9S01E14B', 'Bajorans'),
+('DS9S01E14B', 'Jake & Nog'),
+('DS9S01E14B', 'The Occupation'),
+('DS9S01E15A', 'Bajorans'),
+('DS9S01E15A', 'Social Commentary'),
+('DS9S01E15A', 'The Occupation'),
+('DS9S01E15B', 'Jake & Nog'),
+('DS9S01E16A', 'Bashir & Dax'),
+('DS9S01E16A', 'Energy Beings'),
+('DS9S01E17A', 'Bottle Episode'),
+('DS9S01E17A', 'Changelings'),
+('DS9S01E17A', 'Romance'),
+('DS9S01E17A', 'Trapped'),
+('DS9S01E18A', 'Bajorans'),
+('DS9S01E18A', 'Mind Control'),
+('DS9S01E18A', 'The Occupation'),
+('DS9S01E19A', 'Bajorans'),
+('DS9S01E19A', 'Bottle Episode'),
+('DS9S01E19A', 'Cardassians'),
+('DS9S01E19A', 'The Occupation'),
+('DS9S01E20A', 'Bajorans'),
+('DS9S01E20A', 'DS9 School'),
+('DS9S01E20A', 'Religion'),
+('DS9S01E20A', 'Social Commentary'),
+('DS9S01E20A', 'Terrorism');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Type`
+--
+
+CREATE TABLE IF NOT EXISTS `Type` (
+  `type` varchar(25) NOT NULL,
+  PRIMARY KEY (`type`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Type`
+--
+
+INSERT INTO `Type` (`type`) VALUES
+('Alien Virus'),
+('Bajorans'),
+('Bashir & Dax'),
+('Bashir & Garak'),
+('Bashir & O''Brien'),
+('Borg'),
+('Buddy'),
+('Cardassians'),
+('Cat and Mouse'),
+('Changelings'),
+('Cloning'),
+('DS9 School'),
+('Energy Beings'),
+('Ferengi'),
+('First Contact'),
+('Gamma Quadrant'),
+('God to the Locals'),
+('Introduction'),
+('Investigation'),
+('It''s Only a Game'),
+('Jake & Nog'),
+('Lost Away Team'),
+('Mind Control'),
+('Quark & Odo'),
+('Religion'),
+('Romance'),
+('Sisko & Dax'),
+('Social Commentary'),
+('Space Battle'),
+('Terrorism'),
+('The Bajoran Wormhole'),
+('The Dominion'),
+('The Federation'),
+('The Gamma Quadrant'),
+('The Most Dangerous Game'),
+('The Occupation'),
+('The Prophets'),
+('The Ship Itself'),
+('Trapped'),
+('War'),
+('Wormholes');
