@@ -1,0 +1,23 @@
+{
+  "name": "final-project-osu_cs290_final_project",
+  "version": "1.0.0",
+  "description": "final web development project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OSU-CS290-F16/final-project-osu_cs290_final_project.git"
+  },
+  "author": "nichocam, stribyw, dethlefc, vandelug",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OSU-CS290-F16/final-project-osu_cs290_final_project/issues"
+  },
+  "homepage": "https://github.com/OSU-CS290-F16/final-project-osu_cs290_final_project#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "express4-handlebars": "^0.2.0"
+  }
+}
