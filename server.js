@@ -34,22 +34,27 @@ app.get('/create', function(req, res) {
 		} 
 		else {
 			var chars = [];
+			vars plot = [];
 			console.log(rows);
 
 			rows.forEach(function (row) {
 		        chars.push({
 		          name: row.Character_name
 		        });
+		        plot.push({
+		          type: row.type
+		        });
 	      	});
 
 	      	res.render('create', {
 				title: 'Create Marathon',
-				chars: chars
+				chars: chars,
+				plot: plot
 			});	
 
 		}
 	});
-		
+
 });
 
 app.get('/view', function(req, res) {

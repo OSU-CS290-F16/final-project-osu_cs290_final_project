@@ -18,7 +18,10 @@
             </select>
             <h3>Select a plot type:</h3>
             <select id="plot-select">
-                <option value disable selected>Plot</option>    
+                <option value disable selected>Plot</option> 
+                {{#each plot}}
+			      <option>{{type}}</option>
+			    {{/each}}   
             </select>
         </div>
         <button type="button">Make Marathon</button> 
