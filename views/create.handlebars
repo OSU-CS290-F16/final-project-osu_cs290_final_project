@@ -10,7 +10,11 @@
             </select>
             <h3>Select a character:</h3>
             <select id="char-select">
-                <option value disable selected>Character</option>    
+                <option value disable selected>Character</option>   
+                {{#each chars}}
+			      <option>{{name}}</option>
+			    {{/each}}
+	 
             </select>
             <h3>Select a plot type:</h3>
             <select id="plot-select">
