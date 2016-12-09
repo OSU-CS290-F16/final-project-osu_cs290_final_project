@@ -4,16 +4,28 @@
     <section class="info-area">
         <h1>To boldly go.</h1>
         <div class="info-body">
-            <p>Current Marathon Here</p>
-            <?php
-            ?query = "SELECT DISTINCT Season_and_Episode, Episode_title, Length
-                    FROM Episode
-                    WHERE Season_and_Episode LIKE 'DS9%'
-                    ORDER BY E.Airdate, E.Season_and_Episode";
+            <p>
+			<table>
+				<tr>
+					<th> Episode </th>
+					<th> Title </th>
+					<th> Length </th>
+				</tr>
+				<tr>
+				 {{#each episode}}
+					  <td>{{episode}}</td>
+					{{/each}}
 
-            echo $query
+				 {{#each ep_title}}
+					  <td>{{ep_title}}</td>
+					{{/each}}
 
-            ?>
+				 {{#each len}}
+					  <td>{{len}}</td>
+					{{/each}}
+					</tr>
+			</table>
+		</p>
         </div>
     </section>
 </main>
