@@ -34,7 +34,7 @@ app.get('/create', function(req, res) {
 		} 
 		else {
 			var chars = [];
-			vars plot = [];
+			var plot = [];
 			console.log(rows);
 
 			rows.forEach(function (row) {
@@ -44,7 +44,9 @@ app.get('/create', function(req, res) {
 		        plot.push({
 		          type: row.type
 		        });
-	      	});
+			});
+
+
 
 	      	res.render('create', {
 				title: 'Create Marathon',
@@ -85,8 +87,8 @@ connection.connect(function(err){
   console.log('Connection established');
 });
 
-var char_query = "SELECT Character_name FROM CT";
-var plot_query = "SELECT type FROM Plot_Type";
+var char_query = "SELECT PP.Character_name, T.type FROM Plot_Participant AS PP, Type AS T";
+var plot_query = "SELECT type FROM Type";
 
 
 
