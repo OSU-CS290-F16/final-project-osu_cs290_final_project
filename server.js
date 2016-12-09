@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 
 var port = process.env.PORT || 3000;
 
+var selection = [];
 
 app.get('/', function(req, res) {
 	res.render('index', {
@@ -41,17 +42,11 @@ app.get('/create', function(req, res) {
 		        chars.push({
 		          name: row.Character_name
 		        });
-		        plot.push({
-		          type: row.type
-		        });
-			});
-
-
+	      	});
 
 	      	res.render('create', {
 				title: 'Create Marathon',
-				chars: chars,
-				plot: plot
+				chars: chars
 			});	
 
 		}
@@ -59,10 +54,29 @@ app.get('/create', function(req, res) {
 
 });
 
-app.get('/view', function(req, res) {
-	res.render('view', {
-		title: 'View Marathon'
-	});
+app.get('/view', function (req, res) {
+    connection.query(char_start + req.params.Character_name + char_end, function (err, rows) {
+        if (err) {
+            console.log("--error retrieving character list from database");
+            res.status(500).send("Error fetching characters from database: " + err);
+        }
+        else {
+            var chars = [];
+            var plot = [];
+            console.log(rows);
+
+            rows.forEach(function (row) {
+                chars.push({
+                    name: row.Character_name
+                });
+            });
+
+            res.render('view', {
+                title: 'View Marathon'
+            });
+        }
+    });
+
 });
 
 
@@ -87,9 +101,9 @@ connection.connect(function(err){
   console.log('Connection established');
 });
 
-var char_query = "SELECT PP.Character_name, T.type FROM Plot_Participant AS PP, Type AS T";
-var plot_query = "SELECT type FROM Type";
-
+var char_query = "SELECT Character_name FROM CT";
+var char_start = "CREATE OR REPLACE VIEW Marathon AS SELECT DISTINCT E.Season_and_Episode, E.Episode_Title, E.length FROM Episode AS E, Plot_Participant AS PP WHERE E.Episode_Title = PP.Episode_Title AND PP.Character_name LIKE '%"
+var char_end = "%' ORDER BY E.Airdate, E.Season_and_Episode"
 
 
 app.listen(port, function () {
