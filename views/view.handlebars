@@ -5,28 +5,35 @@
         <h1>To boldly go.</h1>
         <div class="info-body">
             <p>
-			<table>
-				<tr>
-					<th> Episode </th>
-					<th> Title </th>
-					<th> Length </th>
-				</tr>
-				<tr>
+			<table style="float: left">
+				<th>
+					<tr><td> Episode </td></tr>
+				</th>
 				 {{#each episode}}
-					  <td>{{episode}}</td>
+					  <tr><td>{{episode}}</td></tr>
 					{{/each}}
 
+			</table>
+			
+			<table style="float: left">
+				<th>
+					<tr><td> Title </td></tr>
+				</th>
 				 {{#each ep_title}}
-					  <td>{{ep_title}}</td>
+					<tr><td> {{ep_title}}</td></tr>
 					{{/each}}
 
+			</table>
+			
+			<table style="float: left">
+				<th>
+					<tr><td> Length </td></tr>
+				</th>
 				 {{#each len}}
-					  <td>{{len}}</td>
+					 <tr><td> {{len}}</td></tr>
 					{{/each}}
-					</tr>
 			</table>
 		</p>
-            <p>Current Marathon Here</p>
             
             
         </div>

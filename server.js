@@ -116,6 +116,8 @@ connection.connect(function(err){
 var char_query = "SELECT Character_name FROM CT";
 var char_start = "SELECT DISTINCT E.Season_and_Episode, E.Episode_Title, E.length FROM Episode AS E, Plot_Participant AS PP WHERE E.Episode_Title = PP.Episode_Title AND PP.Character_name = \'"
 var char_end = "\' ORDER BY E.Airdate, E.Season_and_Episode"
+var tng = "SELECT DISTINCT Season_and_Episode, Episode_Title, Length FROM Episode WHERE Season_and_Episode LIKE 'TNG%' ORDER BY E.Airdate, E.Season_and_Episode"
+var ds9 = "SELECT DISTINCT Season_and_Episode, Episode_Title, Length FROM Episode WHERE Season_and_Episode LIKE 'DS9%' ORDER BY E.Airdate, E.Season_and_Episode"
 
 
 app.listen(port, function () {
